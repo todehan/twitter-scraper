@@ -12,13 +12,22 @@ time.sleep(2)
 username = browser.find_element_by_xpath('//*[@id="page-container"]/div/div[1]/form/fieldset/div[1]/input')
 password = browser.find_element_by_xpath('//*[@id="page-container"]/div/div[1]/form/fieldset/div[2]/input')
 
-#Enter username instead #
+#Enter username instead of #
 username.send_keys("#")
-#Enter password instead #
+#Enter password instead of #
 password.send_keys("#")
 
 loginButton = browser.find_element_by_xpath('//*[@id="page-container"]/div/div[1]/form/div[2]/button')
 loginButton.click()
+
+searchArea = browser.find_element_by_xpath('//*[@id="search-query"]')
+searchButton = browser.find_element_by_xpath('//*[@id="global-nav-search"]/span/button')
+
+#enter hashtag insted of # you want to search
+searchArea.send_keys("#")
+searchButton.click()
+
+
 
 
 
