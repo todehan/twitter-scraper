@@ -27,6 +27,11 @@ searchButton = browser.find_element_by_xpath('//*[@id="global-nav-search"]/span/
 searchArea.send_keys("#")
 searchButton.click()
 
+elements = browser.find_elements_by_css_selector(".TweetTextSize.js-tweet-text.tweet-text")
+
+for element in elements
+    print(element.text)
+
 
 
 
