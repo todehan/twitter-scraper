@@ -9,6 +9,14 @@ login = browser.find_element_by_xpath('//*[@id="doc"]/div/div[1]/div[1]/div[2]/d
 login.click()
 time.sleep(2)
 
+username = browser.find_element_by_xpath('//*[@id="page-container"]/div/div[1]/form/fieldset/div[1]/input')
+password = browser.find_element_by_xpath('//*[@id="page-container"]/div/div[1]/form/fieldset/div[2]/input')
 
+#Enter username instead #
+username.send_keys("#")
+#Enter password instead #
+password.send_keys("#")
+
+loginButton = browser.find_element_by_xpath('//*[@id="page-container"]/div/div[1]/form/div[2]/button')
 
 browser.close()
