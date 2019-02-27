@@ -27,10 +27,30 @@ searchButton = browser.find_element_by_xpath('//*[@id="global-nav-search"]/span/
 searchArea.send_keys("#")
 searchButton.click()
 
+lenOfPage = browser.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+match=False
+while(match==False):
+    lastCount = lenOfPage
+    time.sleep(3)
+    lenOfPage = browser.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+    if lastCount == lenOfPage:
+        match=True
+time.sleep(5)
+tweets = []
+
 elements = browser.find_elements_by_css_selector(".TweetTextSize.js-tweet-text.tweet-text")
 
-for element in elements
-    print(element.text)
+for element in elements:
+    tweets.append(element.text)
+
+tweetCount = 1
+
+with open("tweets.txt","w",encoding = "UTF-8") as file:
+    for tweet in tweets:
+        file.write(str(tweetCount) + ".\n" + tweet + "\n")
+        file.write("**************************\n")
+        tweetCount += 1
+                   
 
 
 
