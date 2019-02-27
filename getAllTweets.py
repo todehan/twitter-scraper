@@ -18,5 +18,8 @@ username.send_keys("#")
 password.send_keys("#")
 
 loginButton = browser.find_element_by_xpath('//*[@id="page-container"]/div/div[1]/form/div[2]/button')
+loginButton.click()
+
+
 
 browser.close()
