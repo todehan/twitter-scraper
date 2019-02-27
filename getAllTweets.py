@@ -1,8 +1,7 @@
 from selenium import webdriver
+browser = webdriver.Firefox(executable_path = '/home/fako/geckodriver')
 
-import time
 
-browser = webdriver.Firefox()
 browser.get("https://www.twitter.com/")
 time.sleep(2)
 
